@@ -8,10 +8,11 @@ label1.pack()
 label2 = Label(window, text = "You're at a cross road. Where do you want to go? Type 'left' or 'right'")
 label2.pack()
 
-
-gif = PhotoImage(file="100 Day Python\GIF\Adventure.gif") 
-label3 = Label(window, image=gif)
+png = PhotoImage(file="100 Day Python\GIF\Adventure.png") 
+label3 = Label(window, image=png)
+label3.configure(image=png)
 label3.pack() 
+
 
 input1 = Entry(window)
 input1.pack()
