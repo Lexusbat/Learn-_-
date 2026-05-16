@@ -1,10 +1,10 @@
 choice = input("Enter your choice (rock, paper, scissors): ")
-for stagesin choice:
-      if stagesin == "rock":
+for stages in choice:
+    if stages == "rock":
         print("You chose rock!")
-    elif stagesin == "paper":
+    elif stages == "paper":
         print("You chose paper!")
-    elif stagesin == "scissors":
+    elif stages == "scissors":
         print("You chose scissors!")
-    else:
-        print("Invalid choice. Please choose rock, paper, or scissors.")
+else:
+    print("Invalid choice. Please choose rock, paper, or scissors.")
