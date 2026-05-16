@@ -1,11 +1,12 @@
 import random
 
-choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
+
 options = ["rock", "paper", "scissors"]
             # 1        2       3
 choice_pc = random.choice(options)
 count = 0
 while count < 3:
+    choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
     print("Rock...")
     print("Paper...")
     print("Scissors...")
@@ -33,5 +34,8 @@ while count < 3:
            print("You lose! Rock crushes scissors.")
     else:
       print("Invalid choice. Please choose rock, paper, or scissors.")
-breakpoint()
-print("Would you like to play the game again? Y/N")
+
+#play_again = print("Would you like to play the game again? Y/N").lower()
+#if play_again == 'y':
+ #  count = 0
+
