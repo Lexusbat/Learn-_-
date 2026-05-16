@@ -4,34 +4,34 @@ choice = input("Enter your choice (rock, paper, scissors): ").lower().strip()
 options = ["rock", "paper", "scissors"]
             # 1        2       3
 choice_pc = random.choice(options)
-
-for count in range(3):
+count = 0
+while count < 3:
     print("Rock...")
     print("Paper...")
     print("Scissors...")
-print("Shoot!")
-if choice == choice_pc:
-    print('It"s a tie')
-elif choice == 'rock':
-    print(f"Computer chose {choice_pc}")
-    if choice_pc == 'scissors':
+    print("Shoot!")
+    count += 1
+    if choice == choice_pc:
+       print('It"s a tie')
+    elif choice == 'rock':
+       print(f"Computer chose {choice_pc}")
+       if choice_pc == 'scissors':
         print("You win! Rock crushes scissors.")
-    else :
+       else :
         print("You lose! Paper covers rock.")
-elif choice == 'paper':
-    print(f"Computer chose {choice_pc}")
-    if choice_pc == 'rock':
-        print("You win! Paper covers rock.")
-    else :
-        print("You lose! Scissors cut paper.")
-elif choice == 'scissors':
-    print(f"Computer chose {choice_pc}")
-    if choice_pc == 'paper':
-        print("You win! Scissors cut paper.")
-    else :
-        print("You lose! Rock crushes scissors.")
-else:
-    print("Invalid choice. Please choose rock, paper, or scissors.")
-
+    elif choice == 'paper':
+        print(f"Computer chose {choice_pc}")
+        if choice_pc == 'rock':
+          print("You win! Paper covers rock.")
+        else :
+          print("You lose! Scissors cut paper.")
+    elif choice == 'scissors':
+        print(f"Computer chose {choice_pc}")
+        if choice_pc == 'paper':
+          print("You win! Scissors cut paper.")
+        else :
+           print("You lose! Rock crushes scissors.")
+    else:
+      print("Invalid choice. Please choose rock, paper, or scissors.")
 breakpoint()
 print("Would you like to play the game again? Y/N")
