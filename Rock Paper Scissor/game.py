@@ -4,13 +4,10 @@ import random
 options = ["rock", "paper", "scissors"]
             # 1        2       3
 
-def play_again():
-    global count, point
-
-
 choice_pc = random.choice(options)
 count = 0
 point = 0
+invalid = 0
 pc_point = 0
 
 while count < 3:
@@ -48,19 +45,15 @@ while count < 3:
            pc_point += 1
     else:
       print("Invalid choice. Please choose rock, paper, or scissors.")
+      invalid += 1
   
 if pc_point > point:
    print("HAHA. YOU LOST AGAINTS A COMPUTER!")
-   answer = print("Would you like to play the game again? Y/N")
-   if answer== 'y' or 'Y': 
-     play_again("Lets play Rock paper Scissors")
-   else:
-    exit()
-else:
+   #print(pc_point + " >" + point)
+elif pc_point < point:
    print("WOW YOU WON AGAINST A COMPUTER. MUST FEEL GREAT FOR YOU DOESN'T IT??")
-   answer = print("Would you like to play the game again? Y/N")
-   if answer== 'y' or 'Y':
-      play_again("Lets play Rock paper Scissors")
-   else:
-     exit()
+   #print(pc_point + " <" + point)
+elif invalid > point:
+   print("Invalid game play. Start over")
+  
 
