@@ -63,6 +63,7 @@ while count < 3:
        print(f"Computer chose {choice_pc}")
        if choice_pc == 'scissors':
         print("You win! Rock crushes scissors.")
+        print(options_images[0])
         point += 1
        else :
         print("You lose! Paper covers rock.")
@@ -71,6 +72,7 @@ while count < 3:
         print(f"Computer chose {choice_pc}")
         if choice_pc == 'rock':
           print("You win! Paper covers rock.")
+          print(options_images[1])
           point += 1
         else :
           print("You lose! Scissors cut paper.")
@@ -79,6 +81,7 @@ while count < 3:
         print(f"Computer chose {choice_pc}")
         if choice_pc == 'paper':
           print("You win! Scissors cut paper.")
+          print(options_images[2])
           point += 1
         else :
            print("You lose! Rock crushes scissors.")
