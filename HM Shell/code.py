@@ -1,5 +1,6 @@
 import random
 
+
 stage1 = '''
 
       _______
@@ -103,7 +104,7 @@ stage9 = '''
      |      (_)
      |      \|/
      |       |
-     |      / \
+     |      / \\
      |
     _|___
 
@@ -135,19 +136,10 @@ for underrscore in string_list:
 print(string)
 
 stage_count = 0
-
-def wrong_guess():
-    global stage_count
-    stage_count += 1
-
-def right_guess():
-    global stage_count
-    stage_count += 1
-    stage_count -=1
-
 def add(user_letter):
+    global stage_count
     count = 0
-    flag = 0
+    flag = False
     if user_letter not in alph_list:
      print("That is not a valid letter.")
      user_letter = input("Type a letter to guess word").lower()
@@ -155,11 +147,13 @@ def add(user_letter):
      for char in chosen_word: 
         count += 1
         if user_letter == char:
-             right_guess()
+             flag = True
              string_list[count-1] = user_letter   
-     else :
-      print("Incorrect try again")
-      wrong_guess()
+     
+     if flag == False:
+         print("Incorrect try again")
+         stage_count += 1
+       
             
     return  print(stage_list[stage_count])
 
@@ -176,6 +170,11 @@ while string != chosen_word:
 
 
  print(string)
+ if stage_count == 8:
+    print("You Lost")
+ if (stage_count < 9) and (string == chosen_word):
+    print("You won")
+
  
  
         
