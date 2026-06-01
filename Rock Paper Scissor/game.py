@@ -27,8 +27,44 @@ scissors = '''
 
 options = ["rock", "paper", "scissors"]
             # 1        2       3
-option_images = [rock,paper,scissors]
-both = [options,option_images]
+
+
+
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+
+'''
+
+scissors = '''
+
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+'''
+
+options_images = [rock,paper,scissors]
+
+
 
 count = 0
 point = 0
@@ -50,9 +86,12 @@ while count < 3:
        print('It"s a tie')
     elif choice == 'rock':
        print(f"Computer chose {choice_pc}")
-       print(both[choice_pc][choice_pc])
+       for choice in options_images :
+         if choice == choice_pc:
+          print(choice)
        if choice_pc == 'scissors':
         print("You win! Rock crushes scissors.")
+        print("You: " + options_images[0])
         point += 1
        else :
         print("You lose! Paper covers rock.")
@@ -62,6 +101,7 @@ while count < 3:
         print(both[choice_pc][choice_pc])
         if choice_pc == 'rock':
           print("You win! Paper covers rock.")
+          print("You: " + options_images[1])
           point += 1
         else :
           print("You lose! Scissors cut paper.")
@@ -71,6 +111,7 @@ while count < 3:
         print(both[choice_pc][choice_pc])
         if choice_pc == 'paper':
           print("You win! Scissors cut paper.")
+          print("You: " + options_images[2])
           point += 1
         else :
            print("You lose! Rock crushes scissors.")
