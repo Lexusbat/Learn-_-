@@ -318,7 +318,7 @@ def add(user_letter):
     flag = False
     if user_letter not in alph_list:
      print("That is not a valid letter.")
-     user_letter = input("Type a letter to guess word").lower()
+     user_letter = input("Type a letter to guess word: ").lower()
     else: 
      for char in chosen_word: 
         count += 1
@@ -336,7 +336,7 @@ def add(user_letter):
 print(hang)
 
 while string != chosen_word:
- user_letter = input("Type a letter to guess word").lower()
+ user_letter = input("Type a letter to guess word: ").lower()
  add(user_letter)
          
  #print(string_list) 
