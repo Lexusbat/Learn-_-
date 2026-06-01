@@ -1,8 +1,34 @@
 import random
 
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
 options = ["rock", "paper", "scissors"]
             # 1        2       3
+option_images = [rock,paper,scissors]
+both = [options,option_images]
 
 count = 0
 point = 0
@@ -24,6 +50,7 @@ while count < 3:
        print('It"s a tie')
     elif choice == 'rock':
        print(f"Computer chose {choice_pc}")
+       print(both[choice_pc][choice_pc])
        if choice_pc == 'scissors':
         print("You win! Rock crushes scissors.")
         point += 1
@@ -32,6 +59,7 @@ while count < 3:
         pc_point += 1
     elif choice == 'paper':
         print(f"Computer chose {choice_pc}")
+        print(both[choice_pc][choice_pc])
         if choice_pc == 'rock':
           print("You win! Paper covers rock.")
           point += 1
@@ -40,6 +68,7 @@ while count < 3:
           pc_point += 1
     elif choice == 'scissors':
         print(f"Computer chose {choice_pc}")
+        print(both[choice_pc][choice_pc])
         if choice_pc == 'paper':
           print("You win! Scissors cut paper.")
           point += 1
