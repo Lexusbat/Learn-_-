@@ -347,9 +347,9 @@ while string != chosen_word:
 
  print(string)
  if stage_count == 8:
-    print("You Lost")
+    print("+++++++++You Lost+++++++++")
  if (stage_count < 9) and (string == chosen_word):
-    print("You won")
+    print("+++++++++You won++++++++++")
 
  
  
