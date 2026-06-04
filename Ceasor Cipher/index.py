@@ -19,7 +19,7 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
 
 alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
-
+#lipps asvph
 print(logo)
 print("Welcome to Ceasar Cipher")
 direction = input("Type 'E' to encrypt or 'D' to decode a text ")
@@ -33,8 +33,9 @@ def encrypt(text,shift):
 
     for char in text:
         if char in alph:
-            position = alph.index(char)
-            string = string + alph[position + shift ]
+            position = alph.index(char) + shift 
+            position %= len(alph)
+            string = string + alph[position]
         elif char == " ":
              string = string + " "
 
@@ -47,8 +48,9 @@ def decrypt(text,shift):
 
     for char in text:
         if char in alph:
-            position = alph.index(char)
-            string = string + alph[position - shift ]
+            position = alph.index(char) - shift 
+            position %= len(alph)
+            string = string + alph[position] # 0 - 24  mod 3 
         elif char == " ":
              string = string + " "
 
