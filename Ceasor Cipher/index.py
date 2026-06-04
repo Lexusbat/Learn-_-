@@ -28,7 +28,6 @@ shift = int(input("Type in a shift number for encrypting/decoding "))
 text_list = []
 
 def encrypt(text,shift):
-    count = 0
     string ='' 
     position = 0
 
@@ -39,9 +38,21 @@ def encrypt(text,shift):
         elif char == " ":
              string = string + " "
 
-      
+    return print(string)
+        
 
-    
+def decrypt(text,shift):
+    string ='' 
+    position = 0
+
+    for char in text:
+        if char in alph:
+            position = alph.index(char)
+            string = string + alph[position - shift ]
+        elif char == " ":
+             string = string + " "
+
+      
     return print(string)
         
 
@@ -49,6 +60,10 @@ def encrypt(text,shift):
 if (direction == 'E') or (direction == 'e' ):
        print("Here is the messages encoded: ")
        encrypt(text,shift)
+elif (direction == 'D') or (direction == 'd' ):
+       print("Here is the messages decoded: ")
+       decrypt(text,shift)
+
 else:
      print("invalid")
 
