@@ -71,13 +71,13 @@ flag = False
 
 while flag == False :
      
- direction = input("Type 'E' to encrypt or 'D' to decode a text ")
- text = str(input("Type your message here "))
- shift = int(input("Type in a shift number for encrypting/decoding "))
+ direction = input("Type 'E' to encrypt or 'D' to decode a text \n")
+ text = str(input("Type your message here \n"))
+ shift = int(input("Type in a shift number for encrypting/decoding \n"))
  if (direction == 'E') or (direction == 'e' ):
        print("Here is the messages encoded: ")
        encrypt(text,shift)
-       choice = input("Would you like to continue? y/n").lower()
+       choice = input("Would you like to continue? y/n\n").lower()
        if choice == 'n':
            flag = True
        else:
