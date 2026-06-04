@@ -8,10 +8,11 @@ bidders = {}
 
 
 while Flag == False:
+    print("\n" * 100)
     name = input("PLease enter your name:\n")
     amount = int(input("Enter amount you'd like to bid.\n R"))
     choice = input("Is there some one else who'd like to bid too? y/n").lower()
-    print("\n" * 100)
+    
 
     bidders[name] = amount
     
