@@ -19,26 +19,34 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
 
 alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
+
+symbols = [
+    '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.',
+    '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`',
+    '{', '|', '}', '~'
+]
+
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 #lipps asvph
 print(logo)
 print("Welcome to Ceasar Cipher")
-direction = input("Type 'E' to encrypt or 'D' to decode a text ")
-text = input("Type your message here ")
-shift = int(input("Type in a shift number for encrypting/decoding "))
-text_list = []
+
+
+
 
 def encrypt(text,shift):
     string ='' 
     position = 0
 
     for char in text:
+        if (char == " ") or (char in numbers) or (char in symbols):
+             string = string + char
+
         if char in alph:
             position = alph.index(char) + shift 
             position %= len(alph)
             string = string + alph[position]
-        elif char == " ":
-             string = string + " "
-
+      
     return print(string)
         
 
@@ -47,25 +55,45 @@ def decrypt(text,shift):
     position = 0
 
     for char in text:
-        if char in alph:
+        if (char == " ") or (char in numbers) or (char in symbols):
+             string = string + char
+
+        elif char in alph:
             position = alph.index(char) - shift 
             position %= len(alph)
             string = string + alph[position] # 0 - 24  mod 3 
-        elif char == " ":
-             string = string + " "
+    
 
       
     return print(string)
-        
 
+flag = False 
 
-if (direction == 'E') or (direction == 'e' ):
+while flag == False :
+     
+ direction = input("Type 'E' to encrypt or 'D' to decode a text ")
+ text = str(input("Type your message here "))
+ shift = int(input("Type in a shift number for encrypting/decoding "))
+ if (direction == 'E') or (direction == 'e' ):
        print("Here is the messages encoded: ")
        encrypt(text,shift)
-elif (direction == 'D') or (direction == 'd' ):
+       choice = input("Would you like to continue? y/n").lower()
+       if choice == 'n':
+           flag = True
+       else:
+           flag = False 
+        
+       
+            
+ elif (direction == 'D') or (direction == 'd' ):
        print("Here is the messages decoded: ")
        decrypt(text,shift)
+       choice = input("Would you like to continue? y/n").lower()
+       if choice == 'n':
+           flag = True
+       else:
+           flag = False       
 
-else:
+ else:
      print("invalid")
 
