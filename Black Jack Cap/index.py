@@ -1,4 +1,16 @@
 import random
+image = """                                                                                   
+88          88                       88        88                       88         
+88          88                       88        ""                       88         
+88          88                       88                                 88         
+88,dPPYba,  88 ,adPPYYba,  ,adPPYba, 88   ,d8  88 ,adPPYYba,  ,adPPYba, 88   ,d8   
+88P'    "8a 88 ""     `Y8 a8"     "" 88 ,a8"   88 ""     `Y8 a8"     "" 88 ,a8"    
+88       d8 88 ,adPPPPP88 8b         8888[     88 ,adPPPPP88 8b         8888[      
+88b,   ,a8" 88 88,    ,88 "8a,   ,aa 88`"Yba,  88 88,    ,88 "8a,   ,aa 88`"Yba,   
+8Y"Ybbd8"'  88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a 88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a  
+                                              ,88                                  
+                                            888P"     """
+
 cards = ["11","2","3","4","5","6","7","8","9","10","10","10","10"]
 pc_cards = []
 user_cards = []
@@ -85,11 +97,13 @@ def game_hit(Ace):
 
     return print(answer)
   
-  
+print(image)
 flag = False  
 while flag == False:
  choice = input("Would you like to play Black Jack? y/n").lower()
  if choice == 'y':
+  pc_cards.clear()
+  user_cards.clear()
   for i in range(3):
    hand_pc = random.choice(cards)  # Generates a set of 3 random cards for the cards list above
    pc_cards.append(hand_pc)
@@ -112,13 +126,15 @@ while flag == False:
 
 
  choice2 = input("Would you like to hit or stand? h/s").lower() # Ask to hit or stand
- if choice2 == "s":                                   #if to hit, an additional card would be visible for both parties -> game() function will calc who busted/loss
+ if  choice2 not in ["s", "h"]:
+   print("Invalid answer")
+ elif choice2 == "s":                                   #if to hit, an additional card would be visible for both parties -> game() function will calc who busted/loss
     print(f"You got: [ {pc_cards[0]} , {pc_cards[1]} , {pc_cards[2]}]")  
     print(f"You got: [ {user_cards[0]} , {user_cards[1]} ]")  
 
     game_stand(Ace)
 
- if choice2 == "h":                                   #if to hit, an additional card would be visible for both parties -> game() function will calc who busted/loss
+ elif choice2 == "h":                                   #if to hit, an additional card would be visible for both parties -> game() function will calc who busted/loss
     print(f"You got: [ {pc_cards[0]} , {pc_cards[1]} , {pc_cards[2]}]")  
     print(f"You got: [ {user_cards[0]} , {user_cards[1]} , {user_cards[2]}]")  
     if (user_cards[2] == "11") :  
@@ -129,6 +145,8 @@ while flag == False:
       Ace = False
 
     game_hit(Ace)
+ 
+ 
 
 else:
      flag = True
