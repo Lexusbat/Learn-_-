@@ -11,8 +11,34 @@ image = """
                                                                                                                                                                       """
 
 print("Welcome to the Guess te Number Game!!")
-flag = False
 
+def low(remainder):
+   answer = ""
+   if remainder <= 10:
+      answer = "Quite Low...close"
+   elif remainder in range(11, 26):
+      answer = "Too Low...almost"
+   elif remainder in range(26, 51):
+      answer = "Very Low...try again"
+   elif remainder in range(51,101):
+      answer = "Hella Low...boi up!"
+
+   return print(answer)
+
+def high(remainder):
+   answer = ""
+   if remainder <= 10:
+      answer = "Quite High...close"
+   elif remainder in range(11, 26):
+      answer = "Too High...almost"
+   elif remainder in range(26, 51):
+      answer = "Very High...try again"
+   elif remainder in range(51,101):
+      answer = "Hella High...boi down!"
+
+   return print(answer)
+
+flag = False
 while flag == False:
     num = random.randint(0, 101)
     remainder = 0
@@ -26,9 +52,20 @@ while flag == False:
         if Dif not in ["e","h"]:
          print("invalid input")
         elif Dif == "e":
-           print("You have {attempts} attempts to guess the number")
-           guess = input("Make a gues: ")
-           if num > guess :
+           attempts = 10
+           while attempts != 0 :
+            print("You have {attempts} attempts to guess the number")
+            guess = input("Make a gues: ")
+            attempts -= 1
+            if num > guess :
+              remainder = num - guess
+              low(remainder)
+            elif num < guess :
+              remainder = guess - num
+              high(remainder)
+            elif num == guess :
+              "Wow you go tit right!"
+              
               
            
 
