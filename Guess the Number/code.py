@@ -43,7 +43,6 @@ def high(remainder):
 flag = False
 while flag == False:
     num = random.randint(0, 101)
-    print(num)
     remainder = 0
 
     choice = input("Would you like to play? y/n").lower()
