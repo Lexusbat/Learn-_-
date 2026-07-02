@@ -9,20 +9,24 @@ load_logo()
 
 def get_random_celebrity():
     comparison_celebrityA_info = ""
+    comparison_celebrityA_followers = ""
     """Returns a random celebrity from the data list."""
     comparison_celebrityA = random.choice(celebrities)
     comparison_celebrityA_info = f"{comparison_celebrityA['name']}, a {comparison_celebrityA['profession']} from {comparison_celebrityA['country']} "
+    comparison_celebrityA_followers = comparison_celebrityA['followers_millions']
 
-    return comparison_celebrityA_info
+    return comparison_celebrityA_info,comparison_celebrityA_followers
     
 def get_random_celebrity2():
     comparison_celebrityB_info = ""
+    comparison_celebrityB_followers = ""
     """Returns a random celebrity from the data list."""
     # Ensure that the second celebrity is not the same as the first one
     comparison_celebrityB = random.choice(celebrities)
     comparison_celebrityB_info = f"{comparison_celebrityB['name']}, a {comparison_celebrityB['profession']} from {comparison_celebrityB['country']} "
+    comparison_celebrityB_followers = comparison_celebrityB['followers_millions']
 
-    return comparison_celebrityB_info
+    return comparison_celebrityB_info, comparison_celebrityB_followers
     
 
 
@@ -36,31 +40,25 @@ if choice not in ['y', 'n']:
 elif choice == 'y':
     print("Great! Let's get started!")
     # Continue with the game logic here
+    comparison_celebrityA_info, comparison_celebrityA_followers = get_random_celebrity()
+    comparison_celebrityB_info, comparison_celebrityB_followers = get_random_celebrity2()
+    max = 0
+    score = 0
+
     print("Comparison A: ") 
-    print(get_random_celebrity())
+    print(comparison_celebrityA_info)
     load_vs()
     print("Comparison B: ")
     while flag == False:
      if get_random_celebrity2() == get_random_celebrity():
-        print(get_random_celebrity2())
+        print(comparison_celebrityB_info)
         flag = True
-     else: print(get_random_celebrity2())
+     else: print(comparison_celebrityB_info)
      exit()
-
-
-
-
-
-
-    ''' if comparison_celebrityB := random.choice(celebrities) == comparison_celebrityA:
-        comparison_celebrityB = random.choice(celebrities)'''
-
-
-
-
-
-
-
+    max = max(comparison_celebrityA_followers,comparison_celebrityB_followers)
+    guess = input("Guess, who has more followers? A/B")
+    if :
+       print("Lots of followers!")
 
 
 
