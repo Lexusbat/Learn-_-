@@ -11,4 +11,12 @@ vs = """
 ┃┏┛┗━┓ 
 ┗┛ ┗━┛╹
 """
-print(logo)
+
+
+# images.py
+
+def load_logo():
+  print(logo)
+
+def load_vs():
+  print(vs)
