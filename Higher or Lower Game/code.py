@@ -72,16 +72,20 @@ elif choice == 'y':
        if max_followers == comparison_celebrityA_followers:
           print("Lots of followers! You are correct!")
           score += 1
+          print(f"Your Score is: {score}")
+
        else: print("Wrong answer! That's game!")
-       print(str(score))
+       print(f"Your Final Score is: {score}")
        flag_game = True
 
     elif guess == 'b':
        if max_followers == comparison_celebrityB_followers:
           print("Lots of followers! You are correct!")
           score += 1
+          print(f"Your Score is: {score}")
+
        else: print("Wrong answer! That's game!")
-       print(str(score))
+       print(f"Your Final Score is: {score}")
        flag_game = True
    else: 
     exit()
