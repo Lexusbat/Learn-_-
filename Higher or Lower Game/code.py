@@ -5,7 +5,7 @@ global right_option_celeb
 
 
 load_logo()
-#load_vs()
+
 
 def get_random_celebrity():
     comparison_celebrityA_info = ""
@@ -35,16 +35,14 @@ print("The goal is to compare celebs Instagram followers. Guess the one with the
 choice = input("Are you ready to play? Type 'y' for yes or 'n' for no: ").lower()
 flag = False
 flag_game = False
-
+end_game = 0
 if choice not in ['y', 'n']:
     print("Invalid input. Please enter 'y' or 'n'.")
 elif choice == 'y':
-   
+   print("Great! Let's get started!")
 
    while flag_game == False:
-  
 
-    print("Great! Let's get started!")
     # Continue with the game logic here
     comparison_celebrityA_info, comparison_celebrityA_followers = get_random_celebrity()
     comparison_celebrityB_info, comparison_celebrityB_followers = get_random_celebrity2()
@@ -69,27 +67,22 @@ elif choice == 'y':
        print("Invalid Answer, remember 'A' or 'B'")
        guess = input("Guess, who has more followers? A/B").lower()
     elif guess == 'a':
-       if max_followers == comparison_celebrityA_followers:
+       if max_followers != comparison_celebrityA_followers:
+        print(f"Wrong answer! That's game! \n Your Final Score is: {score}")
+        end_game += 1
+       elif max_followers == comparison_celebrityA_followers:
           print("Lots of followers! You are correct!")
           score += 1
           print(f"Your Score is: {score}")
-
-       else: print("Wrong answer! That's game!")
-       print(f"Your Final Score is: {score}")
-       flag_game = True
 
     elif guess == 'b':
-       if max_followers == comparison_celebrityB_followers:
+       if max_followers != comparison_celebrityB_followers:
+        print(f"Wrong answer! That's game! \n Your Final Score is: {score}")
+        end_game += 1
+       elif max_followers == comparison_celebrityB_followers:
           print("Lots of followers! You are correct!")
           score += 1
           print(f"Your Score is: {score}")
-
-       else: print("Wrong answer! That's game!")
-       print(f"Your Final Score is: {score}")
-       flag_game = True
-   else: 
-    exit()
-       
 
 elif choice == 'n':
     print("No worries! Come back when you're ready. Goodbye!")
