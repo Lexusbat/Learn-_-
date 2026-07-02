@@ -1,7 +1,7 @@
 import random #Import random module
 from logo import load_logo, load_vs #Imports imagaes from logo.py
 from data import celebrities #Imports data from data.py
-global right_option_celeb
+global right_option_celeb  
 
 
 load_logo()
@@ -40,8 +40,11 @@ if choice not in ['y', 'n']:
     print("Invalid input. Please enter 'y' or 'n'.")
 elif choice == 'y':
    print("Great! Let's get started!")
-
+   right_option_celeb = ""
    while flag_game == False:
+
+
+
 
     # Continue with the game logic here
     comparison_celebrityA_info, comparison_celebrityA_followers = get_random_celebrity()
@@ -73,6 +76,7 @@ elif choice == 'y':
        elif max_followers == comparison_celebrityA_followers:
           print("Lots of followers! You are correct!")
           score += 1
+          right_option_celeb = comparison_celebrityA_info
           print(f"Your Score is: {score}")
 
     elif guess == 'b':
@@ -82,7 +86,11 @@ elif choice == 'y':
        elif max_followers == comparison_celebrityB_followers:
           print("Lots of followers! You are correct!")
           score += 1
+          right_option_celeb = comparison_celebrityB_info
           print(f"Your Score is: {score}")
+
+    if end_game == 1:
+        flag_game = True
 
 elif choice == 'n':
     print("No worries! Come back when you're ready. Goodbye!")
