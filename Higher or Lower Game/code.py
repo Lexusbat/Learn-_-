@@ -55,10 +55,25 @@ elif choice == 'y':
         flag = True
      else: print(comparison_celebrityB_info)
      exit()
+    """ Max variable checks which A/B option has most followers, then compare it with the option chosen from user -
+        If max == followers amount == option chosen via guess variable, then increase score variable, else end game.
+    """
     max = max(comparison_celebrityA_followers,comparison_celebrityB_followers)
-    guess = input("Guess, who has more followers? A/B")
-    if :
-       print("Lots of followers!")
+    guess = input("Guess, who has more followers? A/B").lower()
+    if guess not in ["a","b"]:
+       print("Invalid Answer, remember 'A' or 'B'")
+       guess = input("Guess, who has more followers? A/B").lower()
+    elif guess == 'a':
+       if max == comparison_celebrityA_followers:
+          print("Lots of followers! You are correct!")
+          score += 1
+       else: print("Wrong answer! That's game!")
+    elif guess == 'b':
+       if max == comparison_celebrityB_followers:
+          print("Lots of followers! You are correct!")
+          score += 1
+       else: print("Wrong answer! That's game!")
+
 
 
 
