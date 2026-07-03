@@ -1,5 +1,7 @@
 from turtle import Turtle, Screen
 import tkinter as TK
+#mport prettytable
+
 
 # Object = Class()
 Sammy = Turtle()
