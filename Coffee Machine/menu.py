@@ -49,6 +49,15 @@ def process_order(request):
     else:
         print(f"Not enough {ingredient}")
 
+
+   
+def check_resources(request):
+    for ingredient in MENU[request]["ingredients"]:
+        if MENU[request]["ingredients"][ingredient] > resources[ingredient]:
+
+            return False
+    return True
+
 def calc_transaction(request):
    change = 0
    money_add = 0
@@ -89,54 +98,45 @@ while flag == False:
         print("Invalid input.Try again")
         print("Type in either 'e'/'l'/'c' please: \n")
     elif request == "report":
-     print(f"Water: {resources['water']}ml \nMilk: {resources['milk']}ml \nMilk: {resources['coffee']}g")
+     print(f"Water: {resources['water']}ml \nMilk: {resources['milk']}ml \nCoffee: {resources['coffee']}g")
      print(f"Money: ${money}")
     elif request == "e":
        request = "espresso"
-       for ingredient in MENU[request]["ingredients"]:
-        if MENU[request]["ingredients"][ingredient] <= resources[ingredient]:
-          
-          print("Please insert coins: ")
-          money_add, insufficient = calc_transaction(request)       
-          money = money_add
-          if insufficient == 0 :
-           process_order(request)
-          else:
-           print("xxxxxxxxxxxxxxxxxxxxx")
-       else:
-        print(f"Not enough {ingredient}")
+       if check_resources(request) == True:
+        print("Please insert coins: ")
+        money_add, insufficient = calc_transaction(request)       
+        money = money_add
+        if insufficient == 0 :
+         process_order(request)
+        else:
+         print("xxxxxxxxxxxxxxxxxxxxx")
+           
 
     elif request == "l":
        request = "latte"
-       for ingredient in MENU[request]["ingredients"]:
-        if MENU[request]["ingredients"][ingredient] <= resources[ingredient]:
-          
-          print("Please insert coins: ")
-          money_add, insufficient = calc_transaction(request)       
-          money = money_add
-          if insufficient == 0 :
-           process_order(request)
-          else:
-           print("xxxxxxxxxxxxxxxxxxxxx")
-       else:
-        print(f"Not enough {ingredient}")
+       if check_resources(request) == True:
+        print("Please insert coins: ")
+        money_add, insufficient = calc_transaction(request)       
+        money = money_add
+        if insufficient == 0 :
+         process_order(request)
+        else:
+         print("xxxxxxxxxxxxxxxxxxxxx")
+           
 
     elif request == "c":
        request = "cappuccino"
-       for ingredient in MENU[request]["ingredients"]:
-        if MENU[request]["ingredients"][ingredient] <= resources[ingredient]:
-          
-          print("Please insert coins: ")
-          money_add, insufficient = calc_transaction(request)       
-          money = money_add
-          if insufficient == 0 :
-           process_order(request)
-          else:
-           print("xxxxxxxxxxxxxxxxxxxxx")
-       else:
-        print(f"Not enough {ingredient}")
+       if check_resources(request) == True:
+        print("Please insert coins: ")
+        money_add, insufficient = calc_transaction(request)       
+        money = money_add
+        if insufficient == 0 :
+         process_order(request)
+        else:
+         print("xxxxxxxxxxxxxxxxxxxxx")
+           
 
-  
+       
     elif request == "exit":
        flag = True
 
