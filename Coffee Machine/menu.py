@@ -93,21 +93,35 @@ while flag == False:
      print(f"Money: ${money}")
     elif request == "e":
        request = "espresso"
-       process_order(request)
        print("Please insert coins: ")
-       money_add, insufficient = calc_transaction(request, insufficient)       money = money_add
+       money_add, insufficient = calc_transaction(request, insufficient)       
+       money = money_add
+       if insufficient == 0 :
+        process_order(request)
+       else:
+        print("xxxxxxxxxxxxxxxxxxxxx")
+          
+
     elif request == "l":
        request = "latte"
-       process_order(request)
        print("Please insert coins: ")
        money_add, insufficient = calc_transaction(request, insufficient)
        money = money_add
+       if insufficient == 0 :
+        process_order(request)
+       else:
+        print("xxxxxxxxxxxxxxxxxxxxx")
+        
     elif request == "c":
        request = "cappuccino"
-       process_order(request)
        print("Please insert coins: ")
        money_add, insufficient = calc_transaction(request, insufficient)
        money = money_add
+       if insufficient == 0 :
+        process_order(request)
+       else:
+        print("xxxxxxxxxxxxxxxxxxxxx")
+        
        
     elif request == "exit":
        flag = True
