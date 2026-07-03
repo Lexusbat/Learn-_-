@@ -63,10 +63,16 @@ def calc_transaction(request):
    money_add = 0
    coins_total = 0
    insufficient = 0 
-   quarter = int(input("How many quarters?: "))
-   dime = int(input("How many dime?: "))
-   nickel = int(input("How many nickel?: "))
-   pennies = int(input("How many pennies?: "))
+   while True:
+    try:
+        quarter = int(input("How many quarters?: "))
+        dime = int(input("How many dimes?: "))
+        nickel = int(input("How many nickels?: "))
+        pennies = int(input("How many pennies?: "))
+        break  # All inputs were valid integers
+    except ValueError:
+        print("Please enter whole numbers only.")
+
    for money in coins:
     if money == "quarter": 
        coins_total=  coins_total + (coins[money] * quarter) 
@@ -105,7 +111,7 @@ while flag == False:
        if check_resources(request) == True:
         print("Please insert coins: ")
         money_add, insufficient = calc_transaction(request)       
-        money = money_add
+        money = money + money_add
         if insufficient == 0 :
          process_order(request)
         else:
@@ -117,7 +123,7 @@ while flag == False:
        if check_resources(request) == True:
         print("Please insert coins: ")
         money_add, insufficient = calc_transaction(request)       
-        money = money_add
+        money = money + money_add
         if insufficient == 0 :
          process_order(request)
         else:
@@ -129,7 +135,7 @@ while flag == False:
        if check_resources(request) == True:
         print("Please insert coins: ")
         money_add, insufficient = calc_transaction(request)       
-        money = money_add
+        money = money + money_add
         if insufficient == 0 :
          process_order(request)
         else:
