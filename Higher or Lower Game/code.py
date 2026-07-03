@@ -2,7 +2,9 @@ import random #Import random module
 from logo import load_logo, load_vs #Imports imagaes from logo.py
 from data import celebrities #Imports data from data.py
 global right_option_celeb  
-celeb_compare = []
+celeb_compare_info = {}
+
+
 
 load_logo()
 
@@ -41,15 +43,21 @@ if choice not in ['y', 'n']:
 elif choice == 'y':
    print("Great! Let's get started!")
    right_option_celeb = ""
-#CREATING 2 CELEB ACCOUNTS WITH ON FUNCTION
+#CREATING 2 CELEB ACCOUNTS WITH ONE FUNCTION
    comparison_celebrity_info, comparison_celebrity_followers = get_random_celebrity()
    celebAinfo = comparison_celebrity_info
    celebAfollowers = comparison_celebrity_followers
-   comparison_celebrity_info, comparison_celebrity_followers = get_random_celebrity()
-   celebBinfo = comparison_celebrity_info
-   celebBfollowers = comparison_celebrity_followers
-   celeb_compare.append(celebAinfo, celebBinfo)
-   
+
+   celeb_first_info = ''
+   celeb_first_followers = 0
+
+   """Returns a random celebrity from the data list."""
+   comparison_celebrity = random.choice(celebrities)
+   celeb_first_info = f"{comparison_celebrity['name']}, a {comparison_celebrity['profession']} from {comparison_celebrity['country']} "
+   celeb_first_followers = comparison_celebrity['followers_millions']
+
+   celeb_compare_info.append('celeb_first_info') = celeb_first_followers
+
 
    flag = False
    max_followers = 0
@@ -58,17 +66,14 @@ elif choice == 'y':
    print(celebAinfo)
    load_vs() 
    print("Comparison B: ")
-   while flag == False:
-    if celebBinfo == celebAinfo:
-        print(celebBinfo)
-        flag = True
-    else: print(celebBinfo) and  flag = True
+   print()
 
 
-   max_followers = max(celebAinfo,celebBinfo)
+   max_followers = max(celebAfollowers,celeb_first_followers)
+   while flag_game == False:
 
 
-   """ Max variable checks which A/B option has most followers, then compare it with the option chosen from user -
+    """ Max variable checks which A/B option has most followers, then compare it with the option chosen from user -
         If max_followers == followers amount == option chosen via guess variable, then increase score variable, else end game.
     """
    guess = input("Guess, who has more followers? A/B").lower()
@@ -88,23 +93,22 @@ elif choice == 'y':
           celeb_compare[1] = ""
           print(f"Your Score is: {score}")
    elif guess == 'b':
-       if max_followers != celebBinfo:
+       if max_followers != celeb_first_followers:
         print(f"Wrong answer! That's game! \n++Your Final Score is: {score}++")
         end_game += 1
-       elif max_followers == celebBinfo:
+       elif max_followers == celeb_first_followers:
           print("Lots of followers! You are correct!")
           score += 1
-          right_option_celeb = celebBinfo
+          right_option_celeb = celeb_first_followers
           print(f"Your Score is: {score}")
           
-   while flag_game == False:
     
-    if right_option_celeb== comparison_celebrity_info:
+       if right_option_celeb== comparison_celebrity_info:
         print(right_option_celeb)
         flag = True
-    else: print(right_option_celeb)
+       else: print(right_option_celeb)
       
-    if end_game == 1:
+   elif end_game == 1:
         flag_game = True
 
 elif choice == 'n':
