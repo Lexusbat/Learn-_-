@@ -49,10 +49,11 @@ def process_order(request):
     else:
         print(f"Not enough {ingredient}")
 
-def calc_transaction(request):
+def calc_transaction(request,insufficient):
    change = 0
    money_add = 0
    coins_total = 0
+   insufficient = 0 
    quarter = int(input("How many quarters?: "))
    dime = int(input("How many dime?: "))
    nickel = int(input("How many nickel?: "))
@@ -68,6 +69,7 @@ def calc_transaction(request):
        coins_total= coins_total + (coins[money] * pennies) 
 
    if coins_total < MENU[request]["cost"]:  
+      insufficient += 1
       print("Not enough coins inserted. Please try again")
    elif coins_total >= MENU[request]["cost"]:
       change = coins_total - MENU[request]["cost"]
@@ -76,7 +78,7 @@ def calc_transaction(request):
       print(f"Here is your {request}. Enjoy!\n")
 
        
-   return money_add 
+   return money_add, insufficient
 
 
 flag = False
@@ -93,19 +95,18 @@ while flag == False:
        request = "espresso"
        process_order(request)
        print("Please insert coins: ")
-       money_add = calc_transaction(request)
-       money = money_add
+       money_add, insufficient = calc_transaction(request, insufficient)       money = money_add
     elif request == "l":
        request = "latte"
        process_order(request)
        print("Please insert coins: ")
-       money_add = calc_transaction(request)
+       money_add, insufficient = calc_transaction(request, insufficient)
        money = money_add
     elif request == "c":
        request = "cappuccino"
        process_order(request)
        print("Please insert coins: ")
-       money_add = calc_transaction(request)
+       money_add, insufficient = calc_transaction(request, insufficient)
        money = money_add
        
     elif request == "exit":
