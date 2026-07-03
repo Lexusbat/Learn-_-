@@ -73,7 +73,7 @@ def calc_transaction(request):
       change = coins_total - MENU[request]["cost"]
       money_add = money_add + MENU[request]["cost"]
       print(f"Here is ${change} in change")
-      print(f"Here is your {MENU[request]}. Enjoy!\n")
+      print(f"Here is your {request}. Enjoy!\n")
 
        
    return money_add 
