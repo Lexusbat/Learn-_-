@@ -45,10 +45,7 @@ def process_order(request):
    
    for ingredient in MENU[request]["ingredients"]:
     if MENU[request]["ingredients"][ingredient] <= resources[ingredient]:
-        print(f"Enough {ingredient}")
         resources[ingredient] = resources[ingredient] -MENU[request]["ingredients"][ingredient] 
-        print(resources[ingredient])
-
     else:
         print(f"Not enough {ingredient}")
 
@@ -69,7 +66,6 @@ def calc_transaction(request):
        coins_total= coins_total + (coins[money] * nickel) 
     elif money == "pennies": 
        coins_total= coins_total + (coins[money] * pennies) 
-    print(coins_total)
 
    if coins_total < MENU[request]["cost"]:  
       print("Not enough coins inserted. Please try again")
@@ -77,6 +73,7 @@ def calc_transaction(request):
       change = coins_total - MENU[request]["cost"]
       money_add = money_add + MENU[request]["cost"]
       print(f"Here is ${change} in change")
+      print(f"Here is your {MENU[request]}. Enjoy!\n")
 
        
    return money_add 
