@@ -83,7 +83,7 @@ flag = False
 money = 0 
 while flag == False:
     request = input("What would you like? (espresso/latte/cappuccino): ").lower()
-    if request not in ["e","l","c","report"]:
+    if request not in ["e","l","c","report","exit"]:
         print("Invalid input.Try again")
         request = input("Type in either 'e'/'l'/'c' please: \n").lower()
     elif request == "report":
@@ -95,6 +95,27 @@ while flag == False:
        print("Please insert coins: ")
        money_add = calc_transaction(request)
        money = money_add
+    elif request == "l":
+       request = "latte"
+       process_order(request)
+       print("Please insert coins: ")
+       money_add = calc_transaction(request)
+       money = money_add
+    elif request == "c":
+       request = "cappuccino"
+       process_order(request)
+       print("Please insert coins: ")
+       money_add = calc_transaction(request)
+       money = money_add
+       
+    elif request == "exit":
+       flag = True
+
+       
+
+
+
+
 
 
 
