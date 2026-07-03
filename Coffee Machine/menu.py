@@ -72,7 +72,7 @@ def calc_transaction(request):
       insufficient += 1
       print("Not enough coins inserted. Please try again")
    elif coins_total >= MENU[request]["cost"]:
-      change = coins_total - MENU[request]["cost"]
+      change = round(coins_total - MENU[request]["cost"],2)
       money_add = money_add + MENU[request]["cost"]
       print(f"Here is ${change} in change")
       print(f"Here is your {request}. Enjoy!\n")
@@ -87,7 +87,7 @@ while flag == False:
     request = input("What would you like? (espresso/latte/cappuccino): ").lower()
     if request not in ["e","l","c","report","exit"]:
         print("Invalid input.Try again")
-        print("Type in either 'e'/'l'/'c' please: \n").lower()
+        print("Type in either 'e'/'l'/'c' please: \n")
     elif request == "report":
      print(f"Water: {resources['water']}ml \nMilk: {resources['milk']}ml \nMilk: {resources['coffee']}g")
      print(f"Money: ${money}")
