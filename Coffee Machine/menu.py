@@ -25,3 +25,107 @@ MENU = {
         "cost": 3.00,
     }
 }
+
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100
+}
+
+
+
+coins = {
+    "penny": 0.01,
+    "nickel": 0.05,
+    "dime": 0.10,
+    "quarter": 0.25
+}
+
+def process_order(request):
+   
+   for ingredient in MENU[request]["ingredients"]:
+    if MENU[request]["ingredients"][ingredient] <= resources[ingredient]:
+        print(f"Enough {ingredient}")
+        resources[ingredient] = resources[ingredient] -MENU[request]["ingredients"][ingredient] 
+        print(resources[ingredient])
+
+    else:
+        print(f"Not enough {ingredient}")
+
+def calc_transaction(request):
+   change = 0
+   money_add = 0
+   coins_total = 0
+   quarter = int(input("How many quarters?: "))
+   dime = int(input("How many dime?: "))
+   nickel = int(input("How many nickel?: "))
+   pennies = int(input("How many pennies?: "))
+   for money in coins:
+    if money == "quarter": 
+       coins_total=  coins_total + (coins[money] * quarter) 
+    elif money== "dime": 
+       coins_total= coins_total + (coins[money] * dime) 
+    elif money== "nickel":
+       coins_total= coins_total + (coins[money] * nickel) 
+    elif money == "pennies": 
+       coins_total= coins_total + (coins[money] * pennies) 
+    print(coins_total)
+
+   if coins_total < MENU[request]["cost"]:  
+      print("Not enough coins inserted. Please try again")
+   elif coins_total >= MENU[request]["cost"]:
+      change = coins_total - MENU[request]["cost"]
+      money_add = money_add + MENU[request]["cost"]
+      print(f"Here is ${change} in change")
+
+       
+   return money_add 
+
+
+flag = False
+money = 0 
+while flag == False:
+    request = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    if request not in ["e","l","c","report"]:
+        print("Invalid input.Try again")
+        request = input("Type in either 'e'/'l'/'c' please: \n").lower()
+    elif request == "report":
+     print(f"Water: {resources['water']}ml \nMilk: {resources['milk']}ml \nMilk: {resources['coffee']}g")
+     print(f"Money: ${money}")
+    elif request == "e":
+       request = "espresso"
+       process_order(request)
+       print("Please insert coins: ")
+       money_add = calc_transaction(request)
+       money = money_add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
