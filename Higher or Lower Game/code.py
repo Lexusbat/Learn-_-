@@ -89,8 +89,6 @@ elif choice == 'y':
           print("Lots of followers! You are correct!")
           score += 1
           right_option_celeb = celebAinfo
-          celeb_compare[0] = right_option_celeb
-          celeb_compare[1] = ""
           print(f"Your Score is: {score}")
    elif guess == 'b':
        if max_followers != celeb_first_followers:
