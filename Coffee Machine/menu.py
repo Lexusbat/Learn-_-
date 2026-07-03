@@ -49,7 +49,7 @@ def process_order(request):
     else:
         print(f"Not enough {ingredient}")
 
-def calc_transaction(request,insufficient):
+def calc_transaction(request):
    change = 0
    money_add = 0
    coins_total = 0
@@ -94,7 +94,7 @@ while flag == False:
     elif request == "e":
        request = "espresso"
        print("Please insert coins: ")
-       money_add, insufficient = calc_transaction(request, insufficient)       
+       money_add, insufficient = calc_transaction(request)       
        money = money_add
        if insufficient == 0 :
         process_order(request)
@@ -105,7 +105,7 @@ while flag == False:
     elif request == "l":
        request = "latte"
        print("Please insert coins: ")
-       money_add, insufficient = calc_transaction(request, insufficient)
+       money_add, insufficient = calc_transaction(request)
        money = money_add
        if insufficient == 0 :
         process_order(request)
@@ -115,7 +115,7 @@ while flag == False:
     elif request == "c":
        request = "cappuccino"
        print("Please insert coins: ")
-       money_add, insufficient = calc_transaction(request, insufficient)
+       money_add, insufficient = calc_transaction(request)
        money = money_add
        if insufficient == 0 :
         process_order(request)
