@@ -9,6 +9,7 @@ Sammy = Turtle()
 print(Sammy)
 Sammy.shape("turtle")
 Sammy.color("midnightblue")
+
 # Make an "I"
 Sammy.left(90)
 Sammy.forward(300)
@@ -24,6 +25,7 @@ Sammy.left(90)
 Sammy.forward(10)
 Sammy.pencolor('white')
 Sammy.home()
+
 # Make a heart
 Sammy.begin_fill()
 Sammy.left(90)
@@ -45,6 +47,7 @@ Sammy.left(45)
 Sammy.forward(150)
 Sammy.left(45)
 Sammy.forward(100)
+Sammy.home()
 Sammy.end_fill()
 Sammy.pencolor('white')
 
