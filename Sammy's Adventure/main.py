@@ -1,8 +1,7 @@
 from turtle import Turtle, Screen
 import tkinter as TK
-#mport prettytable
-
-
+from prettytable import PrettyTable # Imported a PrettyTable Class from this Module installed 
+"""
 # Object = Class()
 Sammy = Turtle()
 # Attributes for Sammy (Object)
@@ -56,3 +55,6 @@ my_screen = Screen()
 print(my_screen.canvheight)
 my_screen.exitonclick()
 
+"""
+#Object = class
+table = PrettyTable()
