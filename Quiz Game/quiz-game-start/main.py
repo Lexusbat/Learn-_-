@@ -22,4 +22,8 @@ quiz = QuizBrain(q_list=question_bank)
 
 while quiz.still_has_questions() == True:
  quiz.next_question()
+ print("\n")
+ if quiz.still_has_questions() == False:
+    print("You've completed the quiz")
+    print(f"Your final score is {quiz.score}/12")
 
