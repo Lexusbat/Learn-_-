@@ -9,7 +9,8 @@ menu = Menu()
 flag = False
 money = 0 
 while flag == False:
-    request = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    items = menu.get_items()
+    request = input(f"What would you like? {items}: ").lower()
     if request not in ["e","l","c","report","exit"]:
         print("Invalid input.Try again")
         print("Type in either 'e'/'l'/'c' please: \n")
@@ -19,6 +20,7 @@ while flag == False:
     elif request == "e":
        request = "espresso"
        choice = menu.find_drink(request)
+       print(choice.cost)
        if ( coffee_maker.is_resource_sufficient(choice) == True) and (money_machine.make_payment(choice.cost) == True) :
         coffee_maker.make_coffee(choice)
        else:
