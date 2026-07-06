@@ -29,27 +29,23 @@ while flag == False:
 
     elif request == "l":
        request = "latte"
-       if check_resources(request) == True:
-        print("Please insert coins: ")
-        money_add, insufficient = calc_transaction(request)       
-        money = money + money_add
-        if insufficient == 0 :
-         process_order(request)
-        else:
+       choice = menu.find_drink(request)
+       print(choice.cost)
+       if ( coffee_maker.is_resource_sufficient(choice) == True) and (money_machine.make_payment(choice.cost) == True) :
+        coffee_maker.make_coffee(choice)
+       else:
          print("xxxxxxxxxxxxxxxxxxxxx")
-           
+            
 
     elif request == "c":
        request = "cappuccino"
-       if check_resources(request) == True:
-        print("Please insert coins: ")
-        money_add, insufficient = calc_transaction(request)       
-        money = money + money_add
-        if insufficient == 0 :
-         process_order(request)
-        else:
+       choice = menu.find_drink(request)
+       print(choice.cost)
+       if ( coffee_maker.is_resource_sufficient(choice) == True) and (money_machine.make_payment(choice.cost) == True) :
+        coffee_maker.make_coffee(choice)
+       else:
          print("xxxxxxxxxxxxxxxxxxxxx")
-           
+         
 
        
     elif request == "exit":
