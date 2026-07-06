@@ -14,15 +14,14 @@ while flag == False:
         print("Invalid input.Try again")
         print("Type in either 'e'/'l'/'c' please: \n")
     elif request == "report":
-     CoffeeMaker.report()
-     print(f"Money: ${money}")
+     money_machine.report()
+     money_machine.money_received()
     elif request == "e":
        request = "espresso"
-       cost = MenuItem.name 
-       check = CoffeeMaker.is_resource_sufficient(request)
+       check = coffee_maker.is_resource_sufficient(request)
        if check == True:
         print("Please insert coins: ")
-        MoneyMachine.make_payment()
+        money_machine.make_payment()
         money = money + money_add
         if insufficient == 0 :
          process_order(request)
