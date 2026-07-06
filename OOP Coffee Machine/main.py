@@ -19,8 +19,7 @@ while flag == False:
     elif request == "e":
        request = "espresso"
        choice = menu.find_drink(request)
-       check = coffee_maker.is_resource_sufficient(choice)
-       if (check == True) and (money_machine.make_payment(choice.cost) == True) :
+       if ( coffee_maker.is_resource_sufficient(choice) == True) and (money_machine.make_payment(choice.cost) == True) :
         coffee_maker.make_coffee(choice)
        else:
          print("xxxxxxxxxxxxxxxxxxxxx")
