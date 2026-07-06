@@ -16,7 +16,10 @@ for question in question_data:
 
     question_bank.append(new_question)
 
-print(question_bank)
 
-quiz = QuizBrain()
-quiz.next_question()
+
+quiz = QuizBrain(q_list=question_bank)
+
+while quiz.still_has_questions() == True:
+ quiz.next_question()
+
