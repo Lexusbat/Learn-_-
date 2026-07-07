@@ -41,7 +41,7 @@ flag = False
 left = ".left(90)"
 right = ".left(180)"
 la_turtle.pensize(5) 
-
+la_turtle.speed(0)
 while flag == False:
   colour = random.choice(colours)
   la_turtle.pencolor(colour)
