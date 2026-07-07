@@ -3,15 +3,15 @@ import random
 la_turtle = Turtle()
 colormode(255)
 
-"""
+
 for i in range(10):
  la_turtle.forward(10)
  la_turtle.penup()
  la_turtle.forward(10)
  la_turtle.pendown()
  la_turtle.forward(10)
+la
 
-"""
 def move(degree,increase):
   for i in range(increase):
     la_turtle.left(degree)
@@ -32,7 +32,7 @@ la_turtle.penup()
 la_turtle.forward(200)
 la_turtle.pendown()
 la_turtle.left(90)
-"""
+
 full = 360
 count_corners = 3
 next = 0
@@ -44,7 +44,7 @@ for shapes in range(9):
     count_corners += 1
     next += 1
 
-"""
+
 flag = False
 left = ".left(90)"
 right = ".left(180)"
