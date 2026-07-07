@@ -3,6 +3,7 @@ import random
 la_turtle = Turtle()
 colormode(255)
 
+la_turtle.right(90)
 
 for i in range(10):
  la_turtle.forward(10)
