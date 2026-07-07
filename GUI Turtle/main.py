@@ -10,7 +10,7 @@ for i in range(10):
  la_turtle.forward(10)
  la_turtle.pendown()
  la_turtle.forward(10)
-la
+la_turtle.home()
 
 def move(degree,increase):
   for i in range(increase):
