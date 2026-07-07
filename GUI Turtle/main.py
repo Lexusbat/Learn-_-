@@ -40,22 +40,28 @@ for shapes in range(9):
 flag = False
 left = ".left(90)"
 right = ".left(180)"
+la_turtle.pensize(5) 
+
 while flag == False:
+  colour = random.choice(colours)
+  la_turtle.pencolor(colour)
   move = random.randrange(1, 5)  # 1, 2, 3, or 4
   if move == 1:
    la_turtle.left(90)
-   la_turtle.forward()
+   la_turtle.forward(10)
   elif move == 2:
    la_turtle.left(180)
-   la_turtle.forward()  
+   la_turtle.forward(10)  
   elif move == 3:
    la_turtle.left(270)
-   la_turtle.forward()  
+   la_turtle.forward(10)  
   elif move == 4:
    la_turtle.left(360)
-   la_turtle.forward()  
+   la_turtle.forward(10)  
+  
 
 
 
 my_screen = Screen()
 my_screen.exitonclick()
+
