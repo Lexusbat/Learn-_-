@@ -5,6 +5,8 @@ colormode(255)
 
 la_turtle.right(90)
 la_turtle.forward(100)
+la_turtle.left(90)
+
 for i in range(10):
  la_turtle.forward(10)
  la_turtle.penup()
