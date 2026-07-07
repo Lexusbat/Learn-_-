@@ -32,7 +32,7 @@ colours = ["red","OrangeRed","gold1","chartreuse1","DodgerBlue","purple3","Viole
 
 la_turtle.left(90)
 la_turtle.penup()
-la_turtle.forward(200)
+la_turtle.forward(300)
 la_turtle.pendown()
 la_turtle.left(90)
 
