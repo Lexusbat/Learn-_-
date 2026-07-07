@@ -1,7 +1,7 @@
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
 import random
 la_turtle = Turtle()
-
+colormode(255)
 
 """
 for i in range(10):
@@ -42,9 +42,12 @@ left = ".left(90)"
 right = ".left(180)"
 la_turtle.pensize(5) 
 la_turtle.speed(0)
+
+
 while flag == False:
-  colour = random.choice(colours)
-  la_turtle.pencolor(colour)
+  """ colour = random.choice(colours)
+  la_turtle.pencolor(colour)"""
+  la_turtle.pencolor(random.choice())
   move = random.randrange(1, 5)  # 1, 2, 3, or 4
   if move == 1:
    la_turtle.left(90)
