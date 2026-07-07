@@ -37,7 +37,23 @@ for shapes in range(9):
     next += 1
 
 """
-
+flag = False
+left = ".left(90)"
+right = ".left(180)"
+while flag == False:
+  move = random.randrange(1, 5)  # 1, 2, 3, or 4
+  if move == 1:
+   la_turtle.left(90)
+   la_turtle.forward()
+  elif move == 2:
+   la_turtle.left(180)
+   la_turtle.forward()  
+  elif move == 3:
+   la_turtle.left(270)
+   la_turtle.forward()  
+  elif move == 4:
+   la_turtle.left(360)
+   la_turtle.forward()  
 
 
 
