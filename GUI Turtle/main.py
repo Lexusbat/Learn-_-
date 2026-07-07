@@ -48,16 +48,16 @@ while flag == False:
   move = random.randrange(1, 5)  # 1, 2, 3, or 4
   if move == 1:
    la_turtle.left(90)
-   la_turtle.forward(10)
+   la_turtle.forward(20)
   elif move == 2:
    la_turtle.left(180)
-   la_turtle.forward(10)  
+   la_turtle.forward(20)  
   elif move == 3:
    la_turtle.left(270)
-   la_turtle.forward(10)  
+   la_turtle.forward(20)  
   elif move == 4:
    la_turtle.left(360)
-   la_turtle.forward(10)  
+   la_turtle.forward(20)  
   
 
 
