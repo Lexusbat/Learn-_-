@@ -17,6 +17,14 @@ def move(degree,increase):
     la_turtle.left(degree)
     la_turtle.forward(100)
 
+def random_color():
+ r = random.randint(0,255)
+ g = random.randint(0,255)
+ b = random.randint(0,255)
+ random_colour = (r,g,b)
+
+ return random_colour
+
 colours = ["red","OrangeRed","gold1","chartreuse1","DodgerBlue","purple3","VioletRed3","black"]
 
 la_turtle.left(90)
@@ -47,7 +55,8 @@ la_turtle.speed(0)
 while flag == False:
   """ colour = random.choice(colours)
   la_turtle.pencolor(colour)"""
-  la_turtle.pencolor(random.choice())
+  random_colour = random_color()
+  la_turtle.pencolor(random_colour)
   move = random.randrange(1, 5)  # 1, 2, 3, or 4
   if move == 1:
    la_turtle.left(90)
