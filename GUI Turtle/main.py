@@ -45,8 +45,7 @@ for shapes in range(9):
     la_turtle.pencolor(colours[next])
     move(degree,count_corners)
     count_corners += 1
-    next += 1
-
+    next = (next + 1) % len(colours)
 
 flag = False
 left = ".left(90)"
@@ -74,7 +73,9 @@ while flag == False:
    la_turtle.left(360)
    la_turtle.forward(20)  
   
-
+la_turtle.penup()
+la_turtle.home()
+la_turtle.pendown()
 
 
 my_screen = Screen()
