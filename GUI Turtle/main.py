@@ -2,7 +2,7 @@ from turtle import Turtle, Screen, colormode
 import random
 la_turtle = Turtle()
 colormode(255)
-
+'''
 la_turtle.right(90)
 la_turtle.forward(100)
 la_turtle.left(90)
@@ -76,8 +76,10 @@ for times in range (200):
   elif move == 4:
    la_turtle.left(360)
    la_turtle.forward(20)  
-  
-
+'''
+la_turtle.speed(0)
+la_turtle.home()
+la_turtle.circle(50)
 
 my_screen = Screen()
 my_screen.exitonclick()
