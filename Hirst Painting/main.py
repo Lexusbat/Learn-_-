@@ -1,2 +1,3 @@
 import colorgram
-colors = colorgram.extract('Skeleton.jpg', 6)
+colors = colorgram.extract('Skeleton', 6)
+colorgram.Color
