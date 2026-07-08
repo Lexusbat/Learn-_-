@@ -26,6 +26,7 @@ next = 0
 for rows in range(0,5): # 6 rows
      for dots in range(0,5): # 5 dots
         dot.begin_fill()
+        dot.pencolor(rgb_colors[next])
         dot.fillcolor((rgb_colors[next]))  # Integers, not floats
         dot.circle(15)
         dot.end_fill()
