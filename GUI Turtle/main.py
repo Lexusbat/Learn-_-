@@ -47,6 +47,10 @@ for shapes in range(9):
     count_corners += 1
     next = (next + 1) % len(colours)
 
+la_turtle.penup()
+la_turtle.home()
+la_turtle.pendown()
+
 flag = False
 left = ".left(90)"
 right = ".left(180)"
@@ -73,9 +77,6 @@ while flag == False:
    la_turtle.left(360)
    la_turtle.forward(20)  
   
-la_turtle.penup()
-la_turtle.home()
-la_turtle.pendown()
 
 
 my_screen = Screen()
