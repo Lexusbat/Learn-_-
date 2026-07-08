@@ -93,7 +93,7 @@ la_turtle.left(180)
 la_turtle.forward(300)
 la_turtle.pendown()
 
-for j in range(200):
+for j in range(80):
  la_turtle.pensize(2)
  la_turtle.pencolor(colours[next])
  la_turtle.speed(0)
