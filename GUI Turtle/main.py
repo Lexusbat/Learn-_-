@@ -3,9 +3,11 @@ import random
 la_turtle = Turtle()
 colormode(255)
 
+la_turtle.penup()
 la_turtle.right(90)
-la_turtle.forward(100)
+la_turtle.forward(350)
 la_turtle.left(90)
+la_turtle.pendown()
 
 for i in range(10):
  la_turtle.forward(10)
@@ -13,7 +15,9 @@ for i in range(10):
  la_turtle.forward(10)
  la_turtle.pendown()
  la_turtle.forward(10)
+la_turtle.penup()
 la_turtle.home()
+la_turtle.pendown()
 
 def move(degree,increase):
   for i in range(increase):
