@@ -77,9 +77,14 @@ for times in range (200):
    la_turtle.left(360)
    la_turtle.forward(20)  
 '''
-la_turtle.speed(0)
-la_turtle.home()
-la_turtle.circle(50)
+def move_circle():
+    la_turtle.setheading(10)
+for j in range(200):
+ la_turtle.speed(6)
+ la_turtle.home()
+ la_turtle.circle(50)
+ move_circle()
+
 
 my_screen = Screen()
 my_screen.exitonclick()
