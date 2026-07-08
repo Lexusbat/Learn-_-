@@ -87,12 +87,12 @@ la_turtle.penup()
 la_turtle.home()
 la_turtle.left(180)
 la_turtle.forward(300)
+la_turtle.pendown()
 
 for j in range(200):
  la_turtle.pensize(2)
  la_turtle.pencolor(colours[next])
  la_turtle.speed(0)
- la_turtle.home()
  la_turtle.circle(50)
  move_circle(increase)
  la_turtle.circle(50)
