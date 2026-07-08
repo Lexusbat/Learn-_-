@@ -20,16 +20,19 @@ dot.left(180)
 dot.forward(300)
 dot.left(180)
 dot.pendown()
+dot.shape("circle")
+dot.speed(0)
 
 for rows in range(0,5): # 6 rows
-
-    for dots in range(0,4): # 5 dots
+     for dots in range(0,5): # 5 dots
         dot.pencolor(rgb_colors[dots])
         dot.circle(15)
         dot.fillcolor(rgb_colors[dots])
         dot.penup()
         dot.forward(60)
         dot.pendown()
+
+dot.position()
 
 
 
