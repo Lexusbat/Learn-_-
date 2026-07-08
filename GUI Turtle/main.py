@@ -58,7 +58,7 @@ la_turtle.pensize(5)
 la_turtle.speed(0)
 
 
-while flag == False:
+for times in range (200):
   """ colour = random.choice(colours)
   la_turtle.pencolor(colour)"""
   random_colour = random_color()
