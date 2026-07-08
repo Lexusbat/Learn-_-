@@ -22,9 +22,16 @@ dot.left(180)
 dot.pendown()
 dot.shape("circle")
 dot.speed(0)
+print(dot.position())
 next = 0 
-for rows in range(0,5): # 6 rows
-     for dots in range(0,5): # 5 dots
+next2 = -50
+for rows in range(0,12): # 6 rows
+    dot.penup()
+    dot.goto(-300, next2)
+    dot.pendown()
+    next2 -= 50
+
+    for dots in range(0,10): # 5 dots
         dot.begin_fill()
         dot.pencolor(rgb_colors[next])
         dot.fillcolor((rgb_colors[next]))  # Integers, not floats
@@ -35,7 +42,7 @@ for rows in range(0,5): # 6 rows
         dot.pendown()
         next = (next + 1) % len(rgb_colors)
 
-dot.position()
+
 
 
 
