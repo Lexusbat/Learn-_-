@@ -8,37 +8,41 @@ colors = ["black","red","blue","purple","yellow","green"] # 6 color turtles
 y_pos = [-70,-40,-10,20,50,80]
 all_turtles =[]
 
-def Turtle_pos(index,spaces_sam):
-    sam = Turtle()
-    sam.penup()
-    sam.shape("turtle")
-    sam.color(colors[index])
-    sam.goto(-200,y_pos[index])
-    sam.forward(spaces_sam)
+def Turtle_pos(index):
+    new_turtle = Turtle()
+    new_turtle.penup()
+    new_turtle.shape("turtle")
+    new_turtle.color(colors[index])
+    new_turtle.goto(-200,y_pos[index])
+    all_turtles.append(new_turtle)
+
     
 is_race_on = False
 
 """
 def race():
-    spaces_sam  = random.randint(5, 20)   # Returns an integer from 0 to 10 (inclusive)
-    sam.speed(1)
-    sam.forward(spaces_sam)
+    spaces_new_turtle  = random.randint(5, 20)   # Returns an integer from 0 to 10 (inclusive)
+    new_turtle.speed(1)
+    new_turtle.forward(spaces_new_turtle)
     spaces_tim = random.randint(5, 20)   # Returns an integer from 0 to 10 (inclusive)
 
-sam = Turtle()
+new_turtle = Turtle()
 tim = Turtle()
-sam.penup()
-sam.goto(x=-200,y=0)
+new_turtle.penup()
+new_turtle.goto(x=-200,y=0)
 tim.penup()
 tim.goto(x=-200,y=-50)
 """
-
+for index in range(6):
+      Turtle_pos(index)
 
 
 while is_race_on ==  False:
-    spaces_sam  = random.randint(5, 20)   # Returns an integer from 0 to 10 (inclusive)
-    for index in range(6):
-      Turtle_pos(index,spaces_sam)
+    spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
+    for turtle in all_turtles:
+        spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
+        turtle.forward(spaces_new_turtle)
+
 
 
 
