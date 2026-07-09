@@ -7,7 +7,7 @@ user_bet = screen.textinput(title="Make your bet",prompt="Which turtle will win?
 colors = ["black","red","blue","purple","yellow","green"] # 6 color turtles
 y_pos = [-70,-40,-10,20,50,80]
 all_turtles =[]
-all_turtles_after =[]
+
 
 
 def Turtle_pos(index):
@@ -45,15 +45,21 @@ win_color = ""
 while is_race_on ==  True: 
     spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
     for turtle in all_turtles:
-        spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
-        turtle.forward(spaces_new_turtle)
-       
-        if turtle.xcor() == 200:
+        if turtle.xcor() > 200:
              win_color = turtle.color()
-             all_turtles_after.append(win_color)
-             print(all_turtles_after)
+             if user_bet != win_color:
+                  print(f"Awwww you lose! {win_color} turtle won")
+                  is_race_on = False
+             else:
+                  print(f"Yay, you win.Your {win_color} turtle won")
+                  is_race_on = False
+      
     
 
+        spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
+        turtle.forward(spaces_new_turtle)
+
+print(win_color)
 
 
 
