@@ -7,11 +7,11 @@ def move_forward():
     sam.forward(10)
 
 def clockwise_turn():
-   new_heading = sam.heading() + 10
+   new_heading = sam.heading() - 10
    sam.setheading(new_heading)
 
 def anti_clockwise_turn():
-   new_heading = sam.heading() - 10
+   new_heading = sam.heading() + 10
    sam.setheading(new_heading)
 
 def move_backwards():
