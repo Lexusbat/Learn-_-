@@ -19,7 +19,9 @@ def move_backwards():
 
 def clear():
     sam.clear()
+    sam.penup()
     sam.home()
+    sam.pendown()
 
 screen.listen()
 screen.onkey(key="w",fun=move_forward)
