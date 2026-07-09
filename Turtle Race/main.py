@@ -8,12 +8,13 @@ colors = ["black","red","blue","purple","yellow","green"] # 6 color turtles
 y_pos = [-70,-40,-10,20,50,80]
 
 
-sam = Turtle()
 
 def Turtle_pos(index):
+    sam = Turtle()
+    sam.penup()
     sam.shape("turtle")
     sam.color(colors[index])
-    sam.goto(-200,y_pos)
+    sam.goto(-200,y_pos[index])
 
 """
 
