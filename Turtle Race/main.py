@@ -46,7 +46,7 @@ while is_race_on ==  True:
     spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
     for turtle in all_turtles:
         if turtle.xcor() > 200:
-             win_color = turtle.color()
+             win_color = turtle.pencolor()
              if user_bet != win_color:
                   print(f"Awwww you lose! {win_color} turtle won")
                   is_race_on = False
@@ -59,7 +59,6 @@ while is_race_on ==  True:
         spaces_new_turtle  = random.randint(0, 10)   # Returns an integer from 0 to 10 (inclusive)
         turtle.forward(spaces_new_turtle)
 
-print(win_color)
 
 
 
