@@ -9,9 +9,12 @@ def move_forward():
 def clockwise_turn(increase):
     sam.setheading(increase)
 
+def backwards():
+    sam.backward(10)
+
 screen.listen()
 screen.onkey(key="w",fun=move_forward,)
 
-
+screen.onkey(key="s",fun=move_backwards,)
 
 screen.exitonclick()
