@@ -37,7 +37,7 @@ while (sam.position() != (250.00, 0.00)) and (tim.position() != (250.00, -50.00)
     race()
 
 """
-for index in range(0,5):
+for index in range(6):
     Turtle_pos(index)
 
 
