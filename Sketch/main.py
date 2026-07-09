@@ -9,7 +9,7 @@ def move_forward():
 def clockwise_turn(increase):
     sam.setheading(increase)
 
-def backwards():
+def move_backwards():
     sam.backward(10)
 
 screen.listen()
