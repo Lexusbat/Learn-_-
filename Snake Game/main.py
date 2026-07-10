@@ -5,7 +5,7 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 
-snake_parts = []
+snake_parts = [(0.00,0.00),(-20.00,0.00),(-40.00,0.00)]
 
 def snake_body():
  xpos = 0.00
@@ -29,6 +29,7 @@ while is_game_on == True:
 
  for snake in snake_parts:
   snake.forward(10)
+  snake.left(90)
   snake.penup()
 
  
