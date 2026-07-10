@@ -6,13 +6,14 @@ screen.bgcolor("black")
 screen.title("My Snake Game")
 
 def snake():
- xpos = 0
- ypos = 0
+ xpos = 0.00
+ ypos = 0.00
  for  snake in range(3):
   sam = Turtle()
+  sam.color("white")
   sam.shape("square")
-  sam.pos(xpos,ypos)
-  xpos += 20
+  sam.setpos(xpos,ypos)
+  xpos += 20.00
 
 
 
