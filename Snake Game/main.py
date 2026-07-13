@@ -12,6 +12,11 @@ screen.title("My Snake Game")
 """Creates Snake - __init__"""
 snake = Snake()
 
+screen.listen()
+screen.onkey(key="Up",fun=snake.up)
+screen.onkey(key="Down",fun=snake.down)
+screen.onkey(key="Left",fun=snake.left)
+screen.onkey(key="Right",fun=snake.right)
 is_game_on = True
 
 #TODO Snake, Food, Scoreboard Classes
@@ -21,8 +26,6 @@ while is_game_on:
  snake.move() 
 
 
- #screen.onkey(key="d",fun=clockwise_turn)
- #screen.onkey(key="a",fun=anti_clockwise_turn)
 
 
 
