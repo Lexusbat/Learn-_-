@@ -1,9 +1,10 @@
 from turtle import Turtle, Screen
+import time
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
-# screen.tracer(0)
+screen.tracer(0)
 screen.title("My Snake Game")
 
 snake_parts = [] #List of all snake part (3)- will be able tc control form this list
@@ -24,11 +25,12 @@ is_game_on = True
 
 
 while is_game_on:
- #screen.update()
- #time.sleep(-1)
-
+ screen.update()
  for snake in snake_parts:
+
   snake.forward(20)
+  time.sleep(0.05)
+
 
 
 
