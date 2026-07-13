@@ -17,10 +17,6 @@ for  positions in start_pos:
   snake_parts.append(snake_part)
 
 
- 
-
-
-
 is_game_on = True
 
 
@@ -29,12 +25,10 @@ while is_game_on:
  time.sleep(0.05)            #2        #0       #-1
  for snake_num in range(len(snake_parts)- 1, 0, -1 ): # start= 1,stop= 3 , step= 1 BUT Check above tuple (backwards)
   new_x = snake_parts[snake_num - 1].xcor()
-  new_y = snake_parts[snake_num - 1].xcor()
+  new_y = snake_parts[snake_num - 1].ycor()
   snake_parts[snake_num].goto(new_x, new_y)
 
-
-
-
+ snake_parts[0].forward(20)
 
 
 
