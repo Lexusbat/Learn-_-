@@ -1,12 +1,13 @@
 from turtle import Turtle
 
+start_pos =  [(0,0),(-20,0),(-40,0)] # Start pos Tuple 0,1,2
+move_dist = 20
 class Snake: 
     def __init__(self):
        """Attributes"""
        self.snake_parts = [] #List of all snake part (3)- will be able tc control form this list
        self.create_snake() #Function for attributes
 
-    start_pos =  [(0,0),(-20,0),(-40,0)] # Start pos Tuple 0,1,2
 
 
     def create_snake(self):
@@ -28,6 +29,6 @@ class Snake:
          new_x = self.snake_parts[snake_num - 1].xcor()
          new_y = self.snake_parts[snake_num - 1].ycor()
          self.snake_parts[snake_num].goto(new_x, new_y)
-         self.snake_parts[0].forward(20)
+       self.snake_parts[0].forward(move_dist)
 
        
