@@ -13,10 +13,12 @@ screen.title("My Snake Game")
 snake = Snake()
 
 screen.listen()
-screen.onkey(key="Up",fun=snake.up)
-screen.onkey(key="Down",fun=snake.down)
-screen.onkey(key="Left",fun=snake.left)
-screen.onkey(key="Right",fun=snake.right)
+
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
 is_game_on = True
 
 #TODO Snake, Food, Scoreboard Classes
