@@ -12,7 +12,7 @@ class Snake:
 
     def create_snake(self):
        """Creates Snake"""
-       for  positions in self.start_pos:
+       for  positions in start_pos:
         self.snake_part = Turtle("square")
         self.snake_part.color("white")
         self.snake_part.penup()
