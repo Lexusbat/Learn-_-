@@ -8,8 +8,8 @@ screen.title("My Snake Game")
 
 snake_parts = [(0,0),(-20,0),(-40,0)]
 
-def snake_body():
- for  positions in snake_parts:
+
+for  positions in snake_parts:
   snake_part = Turtle()
   snake_part.penup()
   snake_part.color("white")
@@ -18,7 +18,7 @@ def snake_body():
 
  
 
-snake_body()
+
 
 is_game_on = True
 
