@@ -17,7 +17,7 @@ is_game_on = True
 #TODO Snake, Food, Scoreboard Classes
 while is_game_on:
  screen.update()
- time.sleep(0.05)      
+ time.sleep(0.1)      
  snake.move() 
 
 

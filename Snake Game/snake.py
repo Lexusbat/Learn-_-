@@ -1,11 +1,15 @@
 from turtle import Turtle
 
 class Snake: 
-    start_pos =  [(0,0),(-20,0),(-40,0)] # Start pos Tuple 0,1,2
-    snake_parts = [] #List of all snake part (3)- will be able tc control form this list
-
-
     def __init__(self):
+       """Attributes"""
+       self.snake_parts = [] #List of all snake part (3)- will be able tc control form this list
+       self.create_snake() #Function for attributes
+
+    start_pos =  [(0,0),(-20,0),(-40,0)] # Start pos Tuple 0,1,2
+
+
+    def create_snake(self):
        """Creates Snake"""
        for  positions in self.start_pos:
         self.snake_part = Turtle("square")
