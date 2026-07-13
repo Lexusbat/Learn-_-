@@ -14,3 +14,11 @@ class Snake:
         pass
 
     def move():
+       """Moves Snake"""                      #2       
+       for snake_num in range(len(snake_parts)- 1, 0, -1 ): # start= 1,stop= 3 , step= 1 BUT Check above tuple (backwards)
+         new_x = snake_parts[snake_num - 1].xcor()
+         new_y = snake_parts[snake_num - 1].ycor()
+         snake_parts[snake_num].goto(new_x, new_y)
+         snake_parts[0].forward(20)
+
+       
