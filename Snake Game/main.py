@@ -6,8 +6,8 @@ screen.bgcolor("black")
 screen.tracer(0)
 screen.title("My Snake Game")
 
-snake_parts = [(0,0),(-20,0),(-40,0)]
-
+snake_parts = []
+start_pos =  [(0,0),(-20,0),(-40,0)]
 
 for  positions in snake_parts:
   snake_part = Turtle()
