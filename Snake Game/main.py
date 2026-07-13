@@ -26,8 +26,8 @@ is_game_on = True
 
 while is_game_on:
  screen.update()
- time.sleep(0.05)
- for snake_num in range(start= 2,stop= 0, step= -1 ): # start= 1,stop= 3 , step= 1 BUT Check above tuple (backwards)
+ time.sleep(0.05)            #2        #0       #-1
+ for snake_num in range(len(snake_parts)- 1, 0, -1 ): # start= 1,stop= 3 , step= 1 BUT Check above tuple (backwards)
   new_x = snake_parts[snake_num - 1].xcor()
   new_y = snake_parts[snake_num - 1].xcor()
   snake_parts[snake_num].goto(new_x, new_y)
