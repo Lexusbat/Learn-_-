@@ -2,11 +2,16 @@ from turtle import Turtle
 
 start_pos =  [(0,0),(-20,0),(-40,0)] # Start pos Tuple 0,1,2
 move_dist = 20
+UP = 90
+DOWN = 270
+RIGHT = 0
+LEFT = 180
 class Snake: 
     def __init__(self):
        """Attributes"""
        self.snake_parts = [] #List of all snake part (3)- will be able tc control form this list
        self.create_snake() #Function for attributes
+       self.head = self.snake_parts[0]
 
 
 
@@ -32,16 +37,16 @@ class Snake:
        self.snake_parts[0].forward(move_dist)
 
     def up(self):
-     self.snake_parts[0].setheading(90)
+     self.head.setheading(90)
 
     def right(self):
-     self.snake_parts[0].setheading(0)
+     self.head.setheading(0)
 
     def left(self):
-     self.snake_parts[0].setheading(180)
+     self.head.setheading(180)
 
     def down(self):
-     self.snake_parts[0].setheading(270)
+     self.head.setheading(270)
 
 
        
