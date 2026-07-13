@@ -15,6 +15,8 @@ for  positions in snake_parts:
   snake_part.color("white")
   snake_part.shape("square")
   snake_part.goto(positions)
+  snake_parts.append(snake_part)
+
 
  
 
