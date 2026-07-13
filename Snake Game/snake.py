@@ -37,16 +37,19 @@ class Snake:
        self.snake_parts[0].forward(move_dist)
 
     def up(self):
-     self.head.setheading(90)
+     if self.head.setheading() != DOWN:
+      self.head.setheading(UP)
+     
 
     def right(self):
-     self.head.setheading(0)
+     self.head.setheading(RIGHT)
 
     def left(self):
-     self.head.setheading(180)
-
+     self.head.setheading(LEFT)
+"""
     def down(self):
-     self.head.setheading(270)
-
+     if self.head.setheading() != UP:
+      self.head.setheading(DOWN)
+"""
 
        
